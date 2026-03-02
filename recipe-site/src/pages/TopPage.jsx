@@ -12,9 +12,9 @@ export default function TopPage() {
     );
 
     return (
-        <div className="w-full">
+        <div className="w-full ">
             {/* ヒーローセクション：キャッチコピーと検索バー */}
-            <section className="py-12 px-4 bg-orange-50 rounded-3xl mb-10 text-center">
+            <section className="py-12 px-4rounded-3xl mb-10 text-center">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">
                     今日、何作る？
                 </h2>

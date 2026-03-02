@@ -19,19 +19,21 @@ function App() {
         <Sidebar />
 
         {/* 右側：メインコンテンツエリア */}
-        <div className="flex-1 flex flex-col">
-          <main className="flex-1 p-0 md:p-10 w-full max-w-7xl mx-auto">
-            <Routes>
-              <Route path={ROUTES.TOP} element={<TopPage />} />
-              <Route path="/recipe/:id" element={<RecipeDetail />} />
-              <Route path={ROUTES.FAVORITE} element={<Favorite />} />
-              <Route path={ROUTES.MENU_LIST} element={<MenuList />} />
-              <Route path={ROUTES.RECIPE_DETAIL} element={<RecipeDetail />} />
-              <Route path={ROUTES.SHOPPING_LIST} element={<ShoppingList />} />
-              <Route path={ROUTES.LOGIN} element={<Login />} />
-            </Routes>
-          </main>
-          <Footer />
+        <div className="flex-1 flex flex-col md:ml-66">
+          <div className='flex-1 flex flex-col m-4 bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden'>
+            <main className="flex-1 p-6 md:p-10 w-full max-w-7xl mx-auto">
+              <Routes>
+                <Route path={ROUTES.TOP} element={<TopPage />} />
+                <Route path="/recipe/:id" element={<RecipeDetail />} />
+                <Route path={ROUTES.FAVORITE} element={<Favorite />} />
+                <Route path={ROUTES.MENU_LIST} element={<MenuList />} />
+                <Route path={ROUTES.RECIPE_DETAIL} element={<RecipeDetail />} />
+                <Route path={ROUTES.SHOPPING_LIST} element={<ShoppingList />} />
+                <Route path={ROUTES.LOGIN} element={<Login />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
         </div>
       </div>
     </BrowserRouter>
