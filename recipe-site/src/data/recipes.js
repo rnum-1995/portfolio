@@ -2,43 +2,149 @@ export const MOCK_RECIPES = [
     {
         id: 1,
         title: 'ふわふわオムライス',
-        image: 'https://images.unsplash.com/photo-1743148509702-2198b23ede1c?w=300&auto=format&fit=crop&q=60',
+        image: 'img_omelet-rice.jpg',
         time: '15分',
-        calorie: '800kcal'
+        calorie: '800kcal',
+        servings: 2,
+        ingredients: [
+            { name: '卵', amount: '4個' },
+            { name: 'ご飯', amount: '300g' },
+            { name: '鶏もも肉', amount: '150g' },
+            { name: '玉ねぎ', amount: '1/2個' },
+            { name: 'ケチャップ', amount: '大さじ3' },
+            { name: 'バター', amount: '20g' },
+            { name: '塩こしょう', amount: '少々' },
+        ],
+        steps: [
+            { step: 1, description: '鶏もも肉を一口大に切り、玉ねぎはみじん切りにする。' },
+            { step: 2, description: 'フライパンにバターを熱し、玉ねぎと鶏肉を炒める。' },
+            { step: 3, description: 'ご飯を加えてケチャップで味付けし、塩こしょうで整えチキンライスを作る。' },
+            { step: 4, description: '卵を溶きほぐし、別のフライパンでバターを熱して流し入れる。' },
+            { step: 5, description: '半熟になったらチキンライスをのせて包み、お皿に盛り付けて完成。' },
+        ]
     },
     {
         id: 2,
         title: '彩り夏野菜カレー',
         image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=800&q=80',
         time: '20分',
-        calorie: '600kcal'
+        calorie: '600kcal',
+        servings: 2,
+        ingredients: [
+            { name: 'カレールー', amount: '4かけ' },
+            { name: 'ズッキーニ', amount: '1本' },
+            { name: 'パプリカ', amount: '1個' },
+            { name: 'なす', amount: '1本' },
+            { name: 'トマト', amount: '1個' },
+            { name: '玉ねぎ', amount: '1個' },
+            { name: 'オリーブオイル', amount: '大さじ1' },
+            { name: '水', amount: '400ml' },
+        ],
+        steps: [
+            { step: 1, description: 'ズッキーニ・パプリカ・なす・トマト・玉ねぎをひと口大に切る。' },
+            { step: 2, description: 'フライパンにオリーブオイルを熱し、玉ねぎを炒める。' },
+            { step: 3, description: '残りの野菜を加えてさっと炒め、水を注いで中火で10分煮る。' },
+            { step: 4, description: '火を止めてカレールーを割り入れ、よく溶かす。' },
+            { step: 5, description: '再び弱火にかけて5分ほど煮込み、とろみがついたら完成。' },
+        ]
     },
     {
         id: 3,
         title: 'メキシカンタコス',
         image: 'https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=500&auto=format&fit=crop&q=60',
         time: '30分',
-        calorie: '300kcal'
+        calorie: '300kcal',
+        servings: 2,
+        ingredients: [
+            { name: 'タコスシェル', amount: '6枚' },
+            { name: '合いびき肉', amount: '200g' },
+            { name: 'レタス', amount: '3枚' },
+            { name: 'トマト', amount: '1個' },
+            { name: 'チーズ', amount: '50g' },
+            { name: 'サルサソース', amount: '大さじ3' },
+            { name: 'クミン', amount: '小さじ1' },
+            { name: '塩こしょう', amount: '少々' },
+        ],
+        steps: [
+            { step: 1, description: 'レタスは細切り、トマトは1cm角に切る。' },
+            { step: 2, description: 'フライパンで合いびき肉を炒め、クミン・塩こしょうで味付けする。' },
+            { step: 3, description: 'タコスシェルをオーブンまたはトースターで2〜3分温める。' },
+            { step: 4, description: 'タコスシェルにひき肉・レタス・トマト・チーズの順にのせる。' },
+            { step: 5, description: 'サルサソースをかけて完成。' },
+        ]
     },
     {
         id: 4,
         title: 'みんな大好きミートソースパスタ',
         image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300&auto=format&fit=crop&q=60',
         time: '30分',
-        calorie: '500kcal'
+        calorie: '500kcal',
+        servings: 2,
+        ingredients: [
+            { name: 'パスタ', amount: '200g' },
+            { name: '合いびき肉', amount: '250g' },
+            { name: '玉ねぎ', amount: '1個' },
+            { name: 'にんにく', amount: '2かけ' },
+            { name: 'トマト缶', amount: '1缶' },
+            { name: 'オリーブオイル', amount: '大さじ1' },
+            { name: 'コンソメ', amount: '1個' },
+            { name: '塩こしょう', amount: '少々' },
+        ],
+        steps: [
+            { step: 1, description: '玉ねぎとにんにくをみじん切りにする。' },
+            { step: 2, description: 'フライパンにオリーブオイルを熱し、にんにく・玉ねぎを炒める。' },
+            { step: 3, description: '合いびき肉を加えて炒め、トマト缶・コンソメを加えて15分煮込む。' },
+            { step: 4, description: '塩こしょうで味を整える。' },
+            { step: 5, description: '別の鍋でパスタを茹で、ミートソースをかけて完成。' },
+        ]
     },
     {
         id: 5,
         title: '簡単グラタン',
         image: 'https://images.unsplash.com/photo-1768204039572-9e62db7b39fd?w=500&auto=format&fit=crop&q=60',
         time: '20分',
-        calorie: '600kcal'
+        calorie: '600kcal',
+        servings: 2,
+        ingredients: [
+            { name: '鶏もも肉', amount: '150g' },
+            { name: '玉ねぎ', amount: '1/2個' },
+            { name: 'マカロニ', amount: '100g' },
+            { name: 'ホワイトソース缶', amount: '1缶' },
+            { name: '牛乳', amount: '100ml' },
+            { name: 'チーズ', amount: '50g' },
+            { name: 'バター', amount: '10g' },
+            { name: '塩こしょう', amount: '少々' },
+        ],
+        steps: [
+            { step: 1, description: '鶏もも肉を一口大に切り、玉ねぎは薄切りにする。' },
+            { step: 2, description: 'マカロニを袋の表示通りに茹でて水気を切る。' },
+            { step: 3, description: 'フライパンにバターを熱し、鶏肉と玉ねぎを炒めて塩こしょうで味付けする。' },
+            { step: 4, description: 'ホワイトソースと牛乳を加えてよく混ぜ、マカロニを加える。' },
+            { step: 5, description: 'グラタン皿に移してチーズをのせ、トースターで焼き色がつくまで焼いて完成。' },
+        ]
     },
     {
         id: 6,
         title: 'カフェ風フレンチトースト',
         image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60',
         time: '15分',
-        calorie: '500kcal'
+        calorie: '500kcal',
+        servings: 2,
+        ingredients: [
+            { name: '食パン', amount: '4枚' },
+            { name: '卵', amount: '2個' },
+            { name: '牛乳', amount: '100ml' },
+            { name: '砂糖', amount: '大さじ2' },
+            { name: 'バター', amount: '20g' },
+            { name: 'メープルシロップ', amount: '大さじ2' },
+            { name: 'バニラエッセンス', amount: '3滴' },
+        ],
+        steps: [
+            { step: 1, description: 'ボウルに卵・牛乳・砂糖・バニラエッセンスを入れてよく混ぜる。' },
+            { step: 2, description: '食パンを卵液に浸し、両面にしっかり染み込ませる。' },
+            { step: 3, description: 'フライパンにバターを熱し、中火でパンを焼く。' },
+            { step: 4, description: '両面にきつね色の焼き色がついたら火を止める。' },
+            { step: 5, description: 'お皿に盛り付けてメープルシロップをかけて完成。' },
+        ]
     }
 ];
