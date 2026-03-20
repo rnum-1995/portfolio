@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { Clock, ArrowLeft } from 'lucide-react';
+import { Clock, ArrowLeft, Flame } from 'lucide-react';
 import { MOCK_RECIPES } from '../data/recipes.js'
 
 export default function RecipeDetail() {
@@ -32,11 +32,28 @@ export default function RecipeDetail() {
             </div>
 
             {/* タイトルと情報 */}
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">{recipe.title}</h1>
+            <h1 className="text-3xl font-bold text-gray-800 mb-4">
+                {recipe.title}
+            </h1>
 
-            <div className="flex items-center gap-2 text-gray-500 mb-8 bg-gray-50 p-3 rounded-xl w-fit">
-                <Clock size={20} className="text-orange-500" />
-                <span className="font-medium">調理時間: {recipe.time}</span>
+            <div className='flex flex-row gap-4 mb-4'>
+                <div className="flex flex-col items-center text-gray-500 bg-gray-50 py-4 px-15 rounded-xl w-fit">
+                    <Clock size={20} className="text-orange-500" />
+                    <span className="font-medium">調理時間</span>
+                    <span className='font-bold'>{recipe.time}</span>
+                </div>
+
+                <div className="flex flex-col items-center text-gray-500 bg-gray-50 py-4 px-15 rounded-xl w-fit">
+                    <Flame size={20} className="text-orange-500" />
+                    <span className="font-medium">カロリー</span>
+                    <span className='font-bold'>{recipe.calorie}</span>
+                </div>
+            </div>
+
+            <div className='mb-8'>
+                <button className='bg-orange-400'>
+                    <span className='text-white'>お気に入りに追加</span>
+                </button>
             </div>
 
             {/* 説明や作り方のダミーテキスト */}
