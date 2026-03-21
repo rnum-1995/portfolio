@@ -2,7 +2,7 @@ export const MOCK_RECIPES = [
     {
         id: 1,
         title: 'ふわふわオムライス',
-        image: 'img_omelet-rice.jpg',
+        image: '/images/img_omelet-rice.jpg',
         time: '15分',
         calorie: '800kcal',
         servings: 2,
@@ -26,7 +26,7 @@ export const MOCK_RECIPES = [
     {
         id: 2,
         title: '彩り夏野菜カレー',
-        image: 'https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=800&q=80',
+        image: '/images/img_curry.jpg',
         time: '20分',
         calorie: '600kcal',
         servings: 2,
@@ -51,7 +51,7 @@ export const MOCK_RECIPES = [
     {
         id: 3,
         title: 'メキシカンタコス',
-        image: 'https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=500&auto=format&fit=crop&q=60',
+        image: '/images/img_tacos.jpg',
         time: '30分',
         calorie: '300kcal',
         servings: 2,
@@ -76,7 +76,7 @@ export const MOCK_RECIPES = [
     {
         id: 4,
         title: 'みんな大好きミートソースパスタ',
-        image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=300&auto=format&fit=crop&q=60',
+        image: '/images/img_pasta.jpg',
         time: '30分',
         calorie: '500kcal',
         servings: 2,
@@ -101,7 +101,7 @@ export const MOCK_RECIPES = [
     {
         id: 5,
         title: '簡単グラタン',
-        image: 'https://images.unsplash.com/photo-1768204039572-9e62db7b39fd?w=500&auto=format&fit=crop&q=60',
+        image: '/images/img_gratin.jpg',
         time: '20分',
         calorie: '600kcal',
         servings: 2,
@@ -126,7 +126,7 @@ export const MOCK_RECIPES = [
     {
         id: 6,
         title: 'カフェ風フレンチトースト',
-        image: 'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=500&auto=format&fit=crop&q=60',
+        image: '/images/img_french-toast.jpg',
         time: '15分',
         calorie: '500kcal',
         servings: 2,
