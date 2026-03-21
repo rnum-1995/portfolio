@@ -21,10 +21,10 @@ export default function TopPage() {
 
                 {/* 検索バーのコンテナ */}
                 <div className="relative max-w-xl mb-5 mx-auto">
-                    {/* 1. 虫眼鏡アイコン */}
+                    {/* 虫眼鏡アイコン */}
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
 
-                    {/* 2. 入力欄 */}
+                    {/* 入力欄 */}
                     <input
                         type="text"
                         placeholder="料理名で検索..."
@@ -33,7 +33,7 @@ export default function TopPage() {
                         className="w-full p-3 pl-10 pr-24 border rounded-full focus:outline-orange-500 shadow-sm"
                     />
 
-                    {/* 3. 検索ボタン */}
+                    {/* 検索ボタン */}
                     <button className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-orange-400 text-white px-5 py-1.5 rounded-full text-sm font-bold hover:bg-orange-600 transition">
                         検索
                     </button>

@@ -19,21 +19,23 @@ export default function Sidebar() {
           </h1>
         </Link>
         <nav className="flex flex-col gap-2">
-          <NavLink to={ROUTES.TOP} className={linkClass}>
-            <Search size={20} /> <span>レシピを探す</span>
-          </NavLink>
-          <NavLink to={ROUTES.FAVORITE} className={linkClass}>
-            <Heart size={20} /> <span>お気に入り</span>
-          </NavLink>
-          <NavLink to={ROUTES.MENU_LIST} className={linkClass}>
-            <Calendar size={20} /> <span>献立リスト</span>
-          </NavLink>
-          <NavLink to={ROUTES.SHOPPING_LIST} className={linkClass}>
-            <ShoppingBasket size={20} /> <span>買い物リスト</span>
-          </NavLink>
-          <NavLink to={ROUTES.LOGIN} className={linkClass}>
-            <UserRoundKey size={20} /> <span>ログイン</span>
-          </NavLink>
+          <ul>
+            <NavLink to={ROUTES.TOP} className={linkClass}>
+              <Search size={20} /> <span>レシピを探す</span>
+            </NavLink>
+            <NavLink to={ROUTES.FAVORITE} className={linkClass}>
+              <Heart size={20} /> <span>お気に入り</span>
+            </NavLink>
+            <NavLink to={ROUTES.MENU_LIST} className={linkClass}>
+              <Calendar size={20} /> <span>献立リスト</span>
+            </NavLink>
+            <NavLink to={ROUTES.SHOPPING_LIST} className={linkClass}>
+              <ShoppingBasket size={20} /> <span>買い物リスト</span>
+            </NavLink>
+            <NavLink to={ROUTES.LOGIN} className={linkClass}>
+              <UserRoundKey size={20} /> <span>ログイン</span>
+            </NavLink>
+          </ul>
         </nav>
       </div>
     </aside >

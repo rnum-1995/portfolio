@@ -1,51 +1,105 @@
 import { useParams, Link } from 'react-router-dom';
-import { Clock, ArrowLeft } from 'lucide-react';
+import { Clock, ArrowLeft, Flame, Heart, Lightbulb } from 'lucide-react';
 import { MOCK_RECIPES } from '../data/recipes.js'
 
 export default function RecipeDetail() {
-    // URLからIDを取得 (例: /recipe/1 なら "1")
     const { id } = useParams();
-
-    // IDに一致するレシピをデータの中から探す
     const recipe = MOCK_RECIPES.find(r => r.id === Number(id));
 
-    // もしレシピが見つからない場合の処理（エラー防止）
     if (!recipe) {
         return <p className="p-10 text-center">レシピが見つかりませんでした。</p>;
     }
 
     return (
-        <div className="max-w-2xl mx-auto p-6">
+        <div className="mx-auto">
             {/* 戻るボタン */}
             <Link to="/" className="flex items-center gap-2 text-orange-500 mb-6 hover:underline">
                 <ArrowLeft size={20} />
                 <span>トップに戻る</span>
             </Link>
 
-            {/* 画像表示 */}
-            <div className="rounded-3xl overflow-hidden shadow-lg mb-8 h-64 md:h-96">
-                <img
-                    src={recipe.image}
-                    alt={recipe.title}
-                    className="w-full h-full object-cover"
-                />
-            </div>
+            {/* 画像・タイトル */}
+            <section className='grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mb-10'>
+                {/* 画像 */}
+                <div className="rounded-3xl overflow-hidden shadow-lg h-64 md:h-96">
+                    <img
+                        src={recipe.image}
+                        alt={recipe.title}
+                        className="w-full h-full object-cover"
+                    />
+                </div>
 
-            {/* タイトルと情報 */}
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">{recipe.title}</h1>
+                {/* タイトル・情報 */}
+                <div className='flex flex-col items-center justify-center w-full'>
+                    <h1 className="text-3xl font-bold text-gray-800 mb-6">
+                        {recipe.title}
+                    </h1>
 
-            <div className="flex items-center gap-2 text-gray-500 mb-8 bg-gray-50 p-3 rounded-xl w-fit">
-                <Clock size={20} className="text-orange-500" />
-                <span className="font-medium">調理時間: {recipe.time}</span>
-            </div>
+                    <div className='flex gap-2 mb-6 w-full'>
+                        <div className="flex flex-col items-center text-gray-500 bg-gray-50 rounded-xl p-4 w-full">
+                            <Clock size={20} className="text-orange-500" />
+                            <span className="font-medium">調理時間</span>
+                            <span className='font-bold'>{recipe.time}</span>
+                        </div>
 
-            {/* 説明や作り方のダミーテキスト */}
-            <div className="border-t pt-6 text-gray-600 leading-relaxed">
-                <h2 className="text-xl font-bold mb-4 text-gray-800">作り方のポイント</h2>
-                <p>
-                    この「{recipe.title}」は、初心者の方でも簡単に作れるレシピです。
-                    新鮮な材料を使って、火加減に注意しながら調理してみてくださいね！
-                </p>
+                        <div className="flex flex-col items-center text-gray-500 bg-gray-50 rounded-xl p-4 w-full">
+                            <Flame size={20} className="text-orange-500" />
+                            <span className="font-medium">カロリー</span>
+                            <span className='font-bold'>{recipe.calorie}</span>
+                        </div>
+                    </div>
+
+                    <button className='flex flex-row justify-center gap-2 bg-orange-400 py-3 rounded-xl w-full'>
+                        <Heart size={20} className='text-white' />
+                        <span className='text-white'>お気に入りに追加</span>
+                    </button>
+                </div>
+            </section>
+
+            {/* 材料・作り方 */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-10">
+                {/* 材料 */}
+                <section className='bg-gray-50 rounded-xl p-4 h-fit'>
+                    <h2 className="text-xl font-bold mb-4 text-gray-800">材料（2人分）</h2>
+                    <ul className='flex flex-col gap-1'>
+                        {recipe.ingredients.map((ingredient, index) => (
+                            <li key={index} className='flex justify-between py-2 border-b border-gray-300'>
+                                <span>{ingredient.name}</span>
+                                <span>{ingredient.amount}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
+                {/* 作り方・コツ */}
+                <section>
+                    <h2 className="text-xl font-bold mb-4 text-gray-800">作り方</h2>
+                    <ol className='mb-5'>
+                        {recipe.steps.map((value) => (
+                            <li key={value.step} className='flex flex-row items-center gap-4 mb-10'>
+                                <span className='flex items-center justify-center w-8 h-8 rounded-full bg-orange-400 text-white font-bold shrink-0'>
+                                    {value.step}
+                                </span>
+
+                                <p className=''>
+                                    {value.description}
+                                </p>
+                            </li>
+                        ))}
+                    </ol>
+
+                    {/* コツ */}
+                    <div className="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-300">
+                        <h3 className="flex flex-row gap-1 mb-2 text-orange-400 ">
+                            <Lightbulb size={20} className='text-orange-400' />
+                            美味しく作るコツ
+                        </h3>
+
+                        <p className="text-gray-600 leading-relaxed ">
+                            {recipe.tip}
+                        </p>
+                    </div>
+                </section>
             </div>
         </div>
     );
