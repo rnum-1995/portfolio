@@ -6,6 +6,7 @@ export const MOCK_RECIPES = [
         time: '15分',
         calorie: '800kcal',
         servings: 2,
+        tip: '卵は強火で一気に焼くのがふわふわに仕上げるコツです。溶き卵にマヨネーズを少し加えると、よりまろやかな味わいになります。',
         ingredients: [
             { name: '卵', amount: '4個' },
             { name: 'ご飯', amount: '300g' },
@@ -30,6 +31,7 @@ export const MOCK_RECIPES = [
         time: '20分',
         calorie: '600kcal',
         servings: 2,
+        tip: '野菜は炒めすぎず食感を残すのがポイントです。仕上げにバターをひとかけ加えるとコクが増してより美味しくなります。',
         ingredients: [
             { name: 'カレールー', amount: '4かけ' },
             { name: 'ズッキーニ', amount: '1本' },
@@ -55,6 +57,7 @@ export const MOCK_RECIPES = [
         time: '30分',
         calorie: '300kcal',
         servings: 2,
+        tip: 'タコスシェルは食べる直前に温めることでパリッとした食感になります。ひき肉にチリパウダーを加えるとより本格的な味わいになります。',
         ingredients: [
             { name: 'タコスシェル', amount: '6枚' },
             { name: '合いびき肉', amount: '200g' },
@@ -80,6 +83,7 @@ export const MOCK_RECIPES = [
         time: '30分',
         calorie: '500kcal',
         servings: 2,
+        tip: 'ひき肉は最初に強火でしっかり焼き色をつけることで旨みが増します。煮込む時間が長いほど味が馴染んで美味しくなります。',
         ingredients: [
             { name: 'パスタ', amount: '200g' },
             { name: '合いびき肉', amount: '250g' },
@@ -105,6 +109,7 @@ export const MOCK_RECIPES = [
         time: '20分',
         calorie: '600kcal',
         servings: 2,
+        tip: 'チーズはピザ用とパルメザンを混ぜると風味豊かに仕上がります。トースターで焼く前に表面にバターを少し散らすと香ばしさが増します。',
         ingredients: [
             { name: '鶏もも肉', amount: '150g' },
             { name: '玉ねぎ', amount: '1/2個' },
@@ -130,6 +135,7 @@ export const MOCK_RECIPES = [
         time: '15分',
         calorie: '500kcal',
         servings: 2,
+        tip: '食パンを卵液に一晩浸けておくと、よりしっとりリッチな仕上がりになります。焼くときは弱火でじっくり焼くことで中までふんわり仕上がります。',
         ingredients: [
             { name: '食パン', amount: '4枚' },
             { name: '卵', amount: '2個' },
