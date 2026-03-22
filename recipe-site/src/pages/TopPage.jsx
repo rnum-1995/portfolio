@@ -30,11 +30,11 @@ export default function TopPage() {
                         placeholder="料理名で検索..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full p-3 pl-10 pr-24 border rounded-full focus:outline-orange-500 shadow-sm"
+                        className="w-full p-3 pl-10 pr-24 border border-gray-300 rounded-full focus:outline-orange-500 shadow-sm"
                     />
 
                     {/* 検索ボタン */}
-                    <button className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-orange-400 text-white px-5 py-1.5 rounded-full text-sm font-bold hover:bg-orange-600 transition">
+                    <button className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-orange-400 text-white px-5 py-1.5 rounded-full text-sm font-bold hover:bg-orange-400 transition">
                         検索
                     </button>
                 </div>
