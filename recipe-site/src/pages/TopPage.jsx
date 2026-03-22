@@ -13,13 +13,13 @@ export default function TopPage() {
 
     return (
         <div className="w-full ">
-            {/* ヒーローセクション：キャッチコピーと検索バー */}
+            {/* キャッチコピー・検索バー */}
             <section className="py-12 px-4rounded-3xl mb-10 text-center">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">
                     今日、何作る？
                 </h2>
 
-                {/* 検索バーのコンテナ */}
+                {/* 検索バー */}
                 <div className="relative max-w-xl mb-5 mx-auto">
                     {/* 虫眼鏡アイコン */}
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
@@ -30,16 +30,16 @@ export default function TopPage() {
                         placeholder="料理名で検索..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="w-full p-3 pl-10 pr-24 border rounded-full focus:outline-orange-500 shadow-sm"
+                        className="w-full p-3 pl-10 pr-24 border border-gray-300 rounded-full focus:outline-orange-500 shadow-sm"
                     />
 
                     {/* 検索ボタン */}
-                    <button className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-orange-400 text-white px-5 py-1.5 rounded-full text-sm font-bold hover:bg-orange-600 transition">
+                    <button className="absolute right-1.5 top-1/2 -translate-y-1/2 bg-orange-400 text-white px-5 py-1.5 rounded-full text-sm font-bold hover:bg-orange-400 transition">
                         検索
                     </button>
                 </div>
 
-                {/* 注目のキーワード（タグ） */}
+                {/* 注目キーワードタグ */}
                 <div className="flex flex-wrap gap-2 justify-center items-center text-sm text-gray-600">
                     <span>注目のキーワード:</span>
                     {['お肉料理', '大根', 'お弁当', 'スイーツ', '洋食'].map((tag) => (
@@ -50,22 +50,25 @@ export default function TopPage() {
                 </div>
             </section>
 
-            {/* レシピ一覧のエリア */}
+            {/* レシピ一覧 */}
             <section>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">レシピ一覧
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                    レシピ一覧
                 </h2>
 
+                {/* レシピカード */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredRecipes.length > 0 ? (
                         filteredRecipes.map(recipe => (
                             <Link
                                 to={`/recipe/${recipe.id}`}
                                 key={recipe.id}
+                                className="h-full"
                             >
-                                <div key={recipe.id} className="group bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300">
+                                <div className="group h-full bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col">
 
                                     {/* 画像コンテナ */}
-                                    <div className="relative h-48 overflow-hidden">
+                                    <div className="relative h-48 overflow-hidden shrink-0">
                                         <img
                                             src={recipe.image}
                                             alt={recipe.title}
@@ -73,12 +76,12 @@ export default function TopPage() {
                                         />
                                     </div>
 
-                                    {/* テキスト部分 */}
-                                    <div className="p-5">
+                                    {/* テキスト */}
+                                    <div className="p-5 flex flex-col flex-1">
                                         <h3 className="font-bold text-lg text-gray-800 mb-2 group-hover:text-orange-500 transition-colors">
                                             {recipe.title}
                                         </h3>
-                                        <div className="flex items-center justify-between">
+                                        <div className="flex items-center justify-between mt-auto">
                                             <button className="text-orange-500 font-bold text-sm hover:underline">
                                                 レシピを見る
                                             </button>

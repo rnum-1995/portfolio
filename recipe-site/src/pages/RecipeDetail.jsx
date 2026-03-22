@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Clock, ArrowLeft, Flame, Heart, Lightbulb } from 'lucide-react';
 import { MOCK_RECIPES } from '../data/recipes.js'
@@ -5,6 +6,14 @@ import { MOCK_RECIPES } from '../data/recipes.js'
 export default function RecipeDetail() {
     const { id } = useParams();
     const recipe = MOCK_RECIPES.find(r => r.id === Number(id));
+
+    // お気に入りの状態を管理
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    // お気に入りボタンをクリックした時の処理
+    const toggleFavorite = () => {
+        setIsFavorite(!isFavorite);
+    };
 
     if (!recipe) {
         return <p className="p-10 text-center">レシピが見つかりませんでした。</p>;
@@ -49,9 +58,21 @@ export default function RecipeDetail() {
                         </div>
                     </div>
 
-                    <button className='flex flex-row justify-center gap-2 bg-orange-400 py-3 rounded-xl w-full'>
-                        <Heart size={20} className='text-white' />
-                        <span className='text-white'>お気に入りに追加</span>
+                    <button
+                        onClick={toggleFavorite}
+                        className={`flex flex-row items-center justify-center gap-2 py-3 rounded-xl w-full transition-colors
+                            ${isFavorite
+                                ? 'bg-pink-400 hover:bg-pink-500'
+                                : 'bg-orange-400 hover:bg-orange-500'
+                            }`}
+                    >
+                        <Heart
+                            size={20}
+                            className={isFavorite ? 'fill-white text-white' : 'text-white'}
+                        />
+                        <span className='text-white'>
+                            {isFavorite ? 'お気に入り済み' : 'お気に入りに追加'}
+                        </span>
                     </button>
                 </div>
             </section>

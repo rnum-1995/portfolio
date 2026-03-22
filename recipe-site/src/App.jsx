@@ -8,7 +8,7 @@ import ShoppingList from './pages/ShoppingList'
 import TopPage from './pages/TopPage'
 import Login from './pages/Login';
 import Footer from './components/Footer';
-import Sidebar from './components/Sidebar';
+import Navigation from './components/Navigation'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       {/* 画面全体をフレックスボックスで横並び */}
       <div className="flex min-h-screen bg-gray-50">
         {/* 左側：固定サイドバー */}
-        <Sidebar />
+        <Navigation />
 
         {/* 右側：メインコンテンツエリア */}
         <div className="flex-1 flex flex-col md:ml-66">
