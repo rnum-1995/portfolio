@@ -49,7 +49,7 @@ export default function RecipeDetail() {
                         </div>
                     </div>
 
-                    <button className='flex flex-row justify-center gap-2 bg-orange-400 py-3 rounded-xl w-full'>
+                    <button className='flex flex-row justify-center gap-2 bg-orange-400 py-3 rounded-xl w-full hover:bg-orange-600'>
                         <Heart size={20} className='text-white' />
                         <span className='text-white'>お気に入りに追加</span>
                     </button>
