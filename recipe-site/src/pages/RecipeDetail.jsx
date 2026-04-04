@@ -1,19 +1,13 @@
-import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Clock, ArrowLeft, Flame, Heart, Lightbulb } from 'lucide-react';
 import { MOCK_RECIPES } from '../data/recipes.js'
 
-export default function RecipeDetail() {
+export default function RecipeDetail({ favorites, toggleFavorite }) {
     const { id } = useParams();
     const recipe = MOCK_RECIPES.find(r => r.id === Number(id));
 
-    // お気に入りの状態を管理
-    const [isFavorite, setIsFavorite] = useState(false);
-
-    // お気に入りボタンをクリックした時の処理
-    const toggleFavorite = () => {
-        setIsFavorite(!isFavorite);
-    };
+    // 現在のレシピがお気に入りかどうか
+    const isFavorite = favorites.includes(recipe.id);
 
     if (!recipe) {
         return <p className="p-10 text-center">レシピが見つかりませんでした。</p>;
@@ -58,8 +52,9 @@ export default function RecipeDetail() {
                         </div>
                     </div>
 
+                    {/* お気に入りボタン */}
                     <button
-                        onClick={toggleFavorite}
+                        onClick={() => toggleFavorite(recipe.id)}
                         className={`flex flex-row items-center justify-center gap-2 py-3 rounded-xl w-full transition-colors
                             ${isFavorite
                                 ? 'bg-pink-400 hover:bg-pink-500'
